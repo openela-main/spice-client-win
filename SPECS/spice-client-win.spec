@@ -2,7 +2,7 @@
 
 
 Name: spice-client-win
-Version: 8.8
+Version: 8.10
 Release: 1%{?dist}
 License: GPLv2+
 Summary: Spice client MSI installers for Windows clients
@@ -10,8 +10,8 @@ Group: Virtualization/Management
 URL: http://www.spice-space.org
 
 Source0: virt-viewer-x86-9.0.msi
-Source1: spice-client-win-8.8-1-sources.zip
-Source2: spice-client-win-8.8-1-spec.zip
+Source1: spice-client-win-8.10-1-sources.zip
+Source2: spice-client-win-8.10-1-spec.zip
 Source3: UsbDk_1.0.22_x64.msi
 Source4: SpiceVersion.txt
 Source5: virt-viewer-x64-9.0.msi
@@ -62,7 +62,7 @@ mv UsbDk*x64.msi usbdk-x64.msi
 mv UsbDk*x86.msi usbdk-x86.msi
 
 popd
- 
+
 %clean
 rm -rf %{buildroot}
 
@@ -80,6 +80,12 @@ rm -rf %{buildroot}
 %{spice_data_dir}/SpiceVersion.txt
 
 %changelog
+* Mon May 26 2025 Uri Lublin <uril@redhat.com> - 8.10-1
+- mingw-virt-viewer 9.0-8.1
+  Resolves: RHEL-90076
+  Related:  RHEL-83101
+  Related:  RHEL-87103
+
 * Sun Feb 12 2023 Uri Lublin <uril@redhat.com> - 8.8-1
 - mingw-virt-viewer 9.0-8
   Resolves: rhbz#2125277
