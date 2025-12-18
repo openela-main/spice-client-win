@@ -3,15 +3,15 @@
 
 Name: spice-client-win
 Version: 8.10
-Release: 1%{?dist}
+Release: 3%{?dist}.1
 License: GPLv2+
 Summary: Spice client MSI installers for Windows clients
 Group: Virtualization/Management
 URL: http://www.spice-space.org
 
 Source0: virt-viewer-x86-9.0.msi
-Source1: spice-client-win-8.10-1-sources.zip
-Source2: spice-client-win-8.10-1-spec.zip
+Source1: spice-client-win-8.10-3-spec.zip
+Source2: spice-client-win-8.10-3-sources.zip
 Source3: UsbDk_1.0.22_x64.msi
 Source4: SpiceVersion.txt
 Source5: virt-viewer-x64-9.0.msi
@@ -80,6 +80,27 @@ rm -rf %{buildroot}
 %{spice_data_dir}/SpiceVersion.txt
 
 %changelog
+* Sat Dec 06 2025 Uri Lublin <uril@redhat.com> - 8.10-3.1
+- Rebuilt
+  Resolves: RHEL-116619
+
+* Sun Nov 30 2025 Uri Lublin <uril@redhat.com> - 8.10-3
+- mingw-virt-viewer 9.0-10
+  Related: RHEL-116619
+  Related: RHEL-112538
+  Related: RHEL-120235
+  Related: RHEL-114628
+
+* Mon Oct 27 2025 Uri Lublin <uril@redhat.com> - 8.10-2
+- mingw-virt-viewer 9.0-9
+  Related: RHEL-116619
+  Related: RHEL-76299
+  Related: RHEL-99874
+  Related: RHEL-96406
+  Related: RHEL-96432
+  Related: RHEL-100187
+  Related: RHEL-103830
+
 * Mon May 26 2025 Uri Lublin <uril@redhat.com> - 8.10-1
 - mingw-virt-viewer 9.0-8.1
   Resolves: RHEL-90076
